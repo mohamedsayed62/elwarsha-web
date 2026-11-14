@@ -1,0 +1,236 @@
+
+.card {
+  background: var(--color-surface-default);
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--shadow-hard);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-md);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  color: var(--color-text-primary);
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.syncBtn {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 600;
+  background: var(--color-surface-muted);
+  color: var(--color-text-primary);
+  border: 1px solid var(--color-border-default);
+  box-shadow: 2px 2px 0 var(--color-border-default);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all 0.1s ease;
+}
+
+.syncBtn:hover:not(:disabled) {
+  transform: translate(1px, 1px);
+  box-shadow: 1px 1px 0 var(--color-border-default);
+}
+
+.syncBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.repoList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.repoItem {
+  background: var(--color-surface-muted);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  transition: border-color 0.15s ease;
+}
+
+.repoItem:hover {
+  border-color: var(--color-border-default);
+}
+
+.repoTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-2);
+}
+
+.repoName {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.repoLink {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: color 0.15s ease;
+}
+
+.repoLink:hover {
+  color: var(--color-brand-primary);
+  text-decoration: underline;
+}
+
+.badgeDraft,
+.badgeInReview,
+.badgeMerged {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: var(--radius-full);
+  padding: 0.2rem 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  white-space: nowrap;
+}
+
+.badgeDraft {
+  background: #e2ddd3;
+  color: var(--color-text-secondary);
+}
+
+.badgeInReview {
+  background: var(--color-surface-brand);
+  color: var(--color-text-brand);
+  border: 1px solid var(--color-brand-primary);
+}
+
+.badgeMerged {
+  background: var(--color-surface-success);
+  color: var(--color-text-success);
+  border: 1px solid #1f5c34;
+}
+
+.stateContent {
+  margin-top: var(--space-2);
+  font-size: 0.95rem;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+}
+
+.stateContent p {
+  margin: 0 0 var(--space-2);
+}
+
+.codeInstruction {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  background: var(--color-bg-canvas);
+  color: var(--color-text-primary);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 0.5rem 0.75rem;
+  margin: var(--space-2) 0;
+  overflow-wrap: anywhere;
+}
+
+.reassuranceText {
+  color: var(--color-text-secondary);
+  font-size: 0.85rem;
+}
+
+.prRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.prMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.prActionLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-brand-primary);
+  text-decoration: none;
+  background: var(--color-surface-brand);
+  border: 1px solid var(--color-brand-primary);
+  border-radius: var(--radius-md);
+  padding: 0.35rem 0.75rem;
+  transition: all 0.15s ease;
+}
+
+.prActionLink:hover {
+  background: var(--color-brand-primary);
+  color: var(--color-text-on-brand);
+}
+
+.loadingPanel,
+.errorPanel {
+  padding: var(--space-4);
+  background: var(--color-surface-default);
+  border: 1px solid var(--color-border-default);
+  box-shadow: var(--shadow-hard);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-4);
+  font-family: var(--font-body);
+}
+
+.errorPanel {
+  background: var(--color-surface-brand);
+  color: var(--color-text-brand);
+}
+
+.errorPanel button {
+  display: block;
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 480px) {
+  .header {
+    align-items: flex-start;
+  }
+
+  .syncBtn {
+    width: 100%;
+  }
+
+  .prRow {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

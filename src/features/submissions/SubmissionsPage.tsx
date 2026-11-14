@@ -1,12 +1,35 @@
 import { messages, type Locale } from "@core/i18n";
 import { PageSection } from "@ui/patterns/PageSection/PageSection";
-import { StatePanel } from "@ui/patterns/StatePanel/StatePanel";
+import { SubmissionStatusCard, type Repository } from "./components/SubmissionStatusCard";
 
-export function SubmissionsPage({ locale }: { locale: Locale }) {
+interface Props {
+  locale: Locale;
+  cohortSlug?: string;
+  weekNumber?: number;
+  repositories?: Repository[];
+  description?: string;
+}
+
+export function SubmissionsPage({
+  locale,
+  cohortSlug = "cohort-1",
+  weekNumber = 1,
+  repositories = [],
+  description = "assignment submission",
+}: Props) {
   const copy = messages[locale];
+
   return (
-    <PageSection eyebrow={copy.portal.submissions} title={copy.portal.empty}>
-      <StatePanel title={copy.portal.unavailable} body={copy.portal.empty} />
+    <PageSection
+      eyebrow={copy.portal.submissions}
+      title={copy.portal.submissions}
+    >
+      <SubmissionStatusCard
+        cohortSlug={cohortSlug}
+        weekNumber={weekNumber}
+        repositories={repositories}
+        description={description}
+      />
     </PageSection>
   );
 }

@@ -6,6 +6,7 @@ import { StatePanel } from "@ui/patterns/StatePanel/StatePanel";
 import { useCohortWeekDetail } from "./useCohortWeekDetail.js";
 import { WeekLockedView } from "./components/WeekLockedView.js";
 import { WeekHeader } from "./components/WeekHeader.js";
+import { SubmissionStatusCard } from "../submissions/components/SubmissionStatusCard.js";
 import { WeekOutcomesList } from "./components/WeekOutcomesList.js";
 import { WeekConceptsGrid } from "./components/WeekConceptsGrid.js";
 import { WeekStackGrid } from "./components/WeekStackGrid.js";
@@ -78,7 +79,13 @@ export function WeekDetailPage({ locale }: { locale: Locale }) {
         <span>{copy.portal.backToWeeks}</span>
       </Link>
 
+      <SubmissionStatusCard
+        cohortSlug={cohortSlug}
+        weekNumber={weekNum}
+        description={week.assignment?.title ?? week.title}
+      />
       <WeekHeader week={week} copy={copy} />
+
 
       <WeekOutcomesList outcomes={week.outcomes} title={copy.portal.learningOutcomes} />
 
